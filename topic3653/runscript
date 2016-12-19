@@ -1,0 +1,4 @@
+register module './filterRecords.lua'
+select * from test.demo
+AGGREGATE filterRecords.str_between("age",5,30) ON test.demo
+

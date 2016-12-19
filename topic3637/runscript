@@ -1,0 +1,4 @@
+remove module "filterRecords.lua"
+register module './filterRecords.lua'
+select * from test.links
+AGGREGATE filterRecords.check_visibility(1,0,3,1515,1545) ON test.links
