@@ -16,8 +16,8 @@ class Program(object):
         host2 = "127.0.0.1"
         port = 3000 
         #User AWS instance IP
-        host1 = "54.172.239.132"  
-        host2 = "52.87.194.222" 
+        host1 = "54.172.9.2"  
+        host2 = "55.172.19.2" 
         config = {'hosts': [(host1,port)] }
         
         try:
