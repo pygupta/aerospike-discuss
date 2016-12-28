@@ -18,7 +18,7 @@ class Program(object):
         #User AWS instance IP
         host1 = "54.172.xx.yy"  
         host2 = "55.xx.yy.zz" 
-        config = {'hosts': [(host1,port)] }
+        config = {'hosts': [(host1,port)] }  #single node test
         
         try:
             self.start_time = time.time()
