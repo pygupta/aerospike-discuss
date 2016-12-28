@@ -18,7 +18,7 @@ class Program(object):
         #User AWS instance IP
         host1 = "54.172.xx.xx"  
         host2 = "55.xx.yy.zz" 
-        config = {'hosts': [(host1,port), (host2,port)] }
+        config = {'hosts': [(host1,port), (host2,port)] } #pass list of nodes to connect to
         
         try:
             self.start_time = time.time()
