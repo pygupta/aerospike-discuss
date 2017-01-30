@@ -1,0 +1,5 @@
+run 'insertData'
+register module './filterRecords.lua'
+AGGREGATE filterRecords.str_equal('key', "d@gmail.com") ON test.demo
+run 'deleteData'
+
