@@ -64,7 +64,7 @@ ret_val = client.map_get_by_value_range(key, "mymap", 2, 14, aerospike.MAP_RETUR
 print ret_val
 
 # Query for sorted map key
-print "Sorted by map keys, d - g , map_policy unordered defined."
+print "Sorted by map keys, d - g , key_value_ordered map_policy defined."
 ret_val = client.map_get_by_key_range(key, "mymap", 'd', 'g', aerospike.MAP_RETURN_VALUE)
 print ret_val
 
@@ -81,12 +81,12 @@ key = ("test", "demo", 'km7')
 client.put(key, {'name': "Map:5,7,10,12", "mymap":{"b":5, "d":7, "a":10, "c":12, "f":13, "e":22, "i":5, "h":7, "g":33} })
 
 # Query for sorted value
-print "Sorted by values, 2 - 14, no map_policy defined. What is the default? Unordered?"
+print "Sorted by values, 2 - 14, no map_policy defined. What is the default? key_value_ordered?"
 ret_val = client.map_get_by_value_range(key, "mymap", 2, 14, aerospike.MAP_RETURN_VALUE)
 print ret_val
 
 # Query for sorted map key
-print "Sorted by map keys, d - g , map_policy unordered defined."
+print "Sorted by map keys, d - g , no map_policy defined. What is the default? key_value_ordered?"
 ret_val = client.map_get_by_key_range(key, "mymap", 'd', 'g', aerospike.MAP_RETURN_VALUE)
 print ret_val
 
