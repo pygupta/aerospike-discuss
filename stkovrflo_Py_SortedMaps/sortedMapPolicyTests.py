@@ -15,8 +15,11 @@ print "Not creating any MAP SIs"
 #client.index_map_keys_create("test", "demo", "mymap", aerospike.INDEX_STRING, "map-key-idx", {})
 
 # Insert the records
+print 'Test Repeated Key map: {"a":1, "b":5, "a":3,"a":1, "b":2, "c":3} }'
 key = ("test", "demo", 'km1')
-client.put(key, {'name': "Map:1,2,3", "mymap":{"a":1, "b":2, "c":3} })
+client.put(key, {'name': "Map:1,2,3", "mymap":{"a":1, "b":5, "a":3,"a":1, "b":2, "c":3} })
+ret_val2 = client.map_get_by_index_range(key, "mymap", 0, 3, aerospike.MAP_RETURN_VALUE)
+print ret_val2
 
 key = ("test", "demo", 'km2')
 client.put(key, {'name': "Map:5,7,11,11", "mymap":{"a":5, "b":7, "c":11, "d":11} })
@@ -27,7 +30,7 @@ client.put(key, {'name': "Map:5,7",  "mymap":{"a":5, "b":7} })
 key = ("test", "demo", 'km4')
 client.put(key, {'name': "Map:5,7,11",  "mymap":{"a":5, "b":7, "c":11} })
 
-print "Test Record is:"
+print "\nTest Record (diff keys, same data) for map_order tests is:"
 print ' "mymap":{"b":5, "d":7, "a":10, "c":12, "f":13, "e":22, "i":5, "h":7, "g":33} '
 
 print "Define MAP_UNORDERED map policy"
