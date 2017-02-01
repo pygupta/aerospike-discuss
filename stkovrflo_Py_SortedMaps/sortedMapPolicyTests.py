@@ -35,8 +35,8 @@ print ' "mymap":{"b":5, "d":7, "a":10, "c":12, "f":13, "e":22, "i":5, "h":7, "g"
 
 print "Define MAP_UNORDERED map policy"
 key = ("test", "demo", 'km5')
-#map_policy={'map_order':aerospike.MAP_UNORDERED}
-map_policy={'map_sort':aerospike.MAP_UNORDERED}
+map_policy={'map_order':aerospike.MAP_UNORDERED}
+#map_policy={'map_sort':aerospike.MAP_UNORDERED}
 client.map_set_policy(key, "mymap", map_policy)
 client.put(key, {'name': "Map:5,7,10,12", "mymap":{"b":5, "d":7, "a":10, "c":12, "f":13, "e":22, "i":5, "h":7, "g":33} })
 
@@ -58,8 +58,8 @@ print ret_val2
 
 print "Define MAP_KEY_VALUE_ORDERED map policy"
 key = ("test", "demo", 'km6')
-#map_policy={'map_order':aerospike.MAP_KEY_VALUE_ORDERED}
-map_policy={'map_sort':aerospike.MAP_KEY_VALUE_ORDERED}
+map_policy={'map_order':aerospike.MAP_KEY_VALUE_ORDERED}
+#map_policy={'map_sort':aerospike.MAP_KEY_VALUE_ORDERED}
 client.map_set_policy(key, "mymap", map_policy)
 client.put(key, {'name': "Map:5,7,10,12", "mymap":{"b":5, "d":7, "a":10, "c":12, "f":13, "e":22, "i":5, "h":7, "g":33} })
 
